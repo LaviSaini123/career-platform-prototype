@@ -1,7 +1,3 @@
-Here is a clean, professional README written exactly for *your* project structure, safe for GitHub (no secrets exposed), and ready to paste directly into your repo.
-
----
-
 # Career Platform Prototype
 
 A lightweight, browser-based career support tool designed to help students with resume improvement, career advising, and interview practice.
