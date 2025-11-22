@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Career Support Platform Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="app-title">Career Support Platform</h1>
+
+    <!-- LOGIN SECTION -->
+    <section id="auth-section" class="card">
+      <h2>Login</h2>
+      <div class="field-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="student@example.org" />
+      </div>
+      <div class="field-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" />
+      </div>
+      <button id="login-btn" class="primary-btn">Login</button>
+    </section>
+
+    <!-- 2FA SECTION -->
+    <section id="twofa-section" class="card hidden">
+      <h2>Two-Factor Verification</h2>
+      <p id="demo-code" class="demo-code">Demo code: (click "Send code")</p>
+      <div class="field-group">
+        <label for="code-input">Enter 6-digit code</label>
+        <input id="code-input" type="text" placeholder="123456" />
+      </div>
+      <div class="twofa-actions">
+        <button id="send-code-btn" class="secondary-btn">Send code</button>
+        <button id="verify-code-btn" class="primary-btn">Verify</button>
+      </div>
+      <p id="twofa-message" class="status-message"></p>
+    </section>
+
+    <!-- MAIN APP SECTION -->
+    <section id="app-section" class="card hidden">
+      <h2>Career Tools</h2>
+
+      <div class="tabs">
+        <button class="tab-button active" data-target="resume-tab">Resume Builder</button>
+        <button class="tab-button" data-target="advisor-tab">Career Advisor</button>
+        <button class="tab-button" data-target="interview-tab">Interview Practice</button>
+        <button class="tab-button" data-target="saved-tab">Saved Responses</button>
+      </div>
+
+      <!-- RESUME TAB -->
+      <div id="resume-tab" class="tab-content active">
+        <h3>AI Resume Bullet Feedback</h3>
+        <div class="field-group">
+          <label for="resume-input">Paste a resume bullet</label>
+          <textarea id="resume-input" rows="4" placeholder="Led a team of 4 students to organize weekly tutoring sessions..."></textarea>
+        </div>
+        <button id="resume-feedback-btn" class="primary-btn">Get AI feedback</button>
+        <button id="save-resume-response" class="secondary-btn">Save this response</button>
+        <div class="field-group">
+          <label for="resume-output">AI Feedback</label>
+          <textarea id="resume-output" rows="8" readonly></textarea>
+        </div>
+      </div>
+
+      <!-- ADVISOR TAB -->
+      <div id="advisor-tab" class="tab-content hidden">
+        <h3>AI Career Advisor</h3>
+        <div class="field-group">
+          <label for="advisor-input">Describe student background and goals</label>
+          <textarea id="advisor-input" rows="4" placeholder="High school junior interested in tech, no prior internships, enjoys problem-solving..."></textarea>
+        </div>
+        <button id="advisor-btn" class="primary-btn">Get career suggestions</button>
+        <button id="save-advisor-response" class="secondary-btn">Save this response</button>
+        <div class="field-group">
+          <label for="advisor-output">AI Suggestions</label>
+          <textarea id="advisor-output" rows="8" readonly></textarea>
+        </div>
+      </div>
+
+      <!-- INTERVIEW TAB -->
+      <div id="interview-tab" class="tab-content hidden">
+        <h3>Interview Practice</h3>
+        <div class="field-group">
+          <label for="interview-input">Target role or field</label>
+          <input id="interview-input" type="text" placeholder="Entry-level data analyst" />
+        </div>
+        <button id="interview-btn" class="primary-btn">Generate practice questions</button>
+        <button id="save-interview-response" class="secondary-btn">Save this response</button>
+        <div class="field-group">
+          <label for="interview-output">AI Questions</label>
+          <textarea id="interview-output" rows="8" readonly></textarea>
+        </div>
+      </div>
+
+      <!-- SAVED RESPONSES TAB -->
+      <div id="saved-tab" class="tab-content hidden">
+        <h3>Saved Responses</h3>
+        <div id="saved-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
